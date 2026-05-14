@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>T. N. K Beauty Center</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* كل الكود زي ما هو بدون تغيير */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff5f8;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:900;
+    color:#ff1493;
+    letter-spacing:5px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-weight:700;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff1493;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:90px;
+    margin-bottom:10px;
+    text-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+
+.hero-content p{
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.btns{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-main{
+    background:#ff1493;
+    color:white;
+}
+
+.btn-main:hover{
+    background:#d60074;
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#ff1493;
+}
+
+/* ===== SECTION ===== */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:50px;
+    color:#ff1493;
+}
+
+.section-title p{
+    color:#777;
+    margin-top:10px;
+}
+
+/* ===== SERVICES ===== */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+    color:#ff1493;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.card-content p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* ===== ABOUT ===== */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.about-text h3{
+    font-size:45px;
+    color:#ff1493;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    line-height:2;
+    color:#555;
+    margin-bottom:20px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-box{
+    background:white;
+    border-radius:30px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.contact-box h3{
+    color:#ff1493;
+    font-size:40px;
+    margin-bottom:25px;
+}
+
+.contact-box p{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.socials{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.socials a{
+    text-decoration:none;
+    background:#ff1493;
+    color:white;
+    padding:14px 30px;
+    border-radius:40px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.socials a:hover{
+    transform:scale(1.08);
+    background:#d60074;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* ===== FLOAT BUTTON ===== */
+
+.call-btn{
+    position:fixed;
+    bottom:25px;
+    left:25px;
+    background:#ff1493;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:30px;
+    text-decoration:none;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    z-index:999;
+    transition:.3s;
+}
+
+.call-btn:hover{
+    transform:scale(1.1);
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+    .hero-content h1{
+        font-size:55px;
+    }
+
+    .hero-content p{
+        font-size:20px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">T. N. K</div>
+
+<ul>
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#services">الخدمات</a></li>
+<li><a href="#about">عن الكوافير</a></li>
+<li><a href="#contact">تواصل معنا</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>T. N. K</h1>
+
+<p>
+Beauty Center & Women's Salon
+</p>
+
+<div class="btns">
+
+<a href="#contact" class="btn btn-main">
+احجزي الآن
+</a>
+
+<a href="tel:01200327196" class="btn btn-outline">
+اتصال سريع
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+<h2>خدماتنا</h2>
+<p>أحدث خدمات التجميل والعناية بالبشرة والشعر</p>
+</div>
+
+<div class="services">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>ميكب احترافي</h3>
+
+<p>ميكب عصري مناسب لجميع المناسبات والأفراح بإطلالة أنيقة وجذابة.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>تصفيف الشعر</h3>
+
+<p>أحدث القصات والصبغات وتسريحات الشعر على أحدث الموضة.</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>العناية بالبشرة</h3>
+
+<p>جلسات تنظيف وترطيب للبشرة باستخدام أفضل المنتجات العالمية.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200&auto=format&fit=crop">
+
+<div class="about-text">
+
+<h3>عن T. N. K</h3>
+
+<p>في T. N. K بنهتم بكل تفاصيل جمالك، وبنقدملك تجربة فخمة ومريحة.</p>
+
+<p>هدفنا إن كل بنت تخرج وهي واثقة وجميلة.</p>
+
+<a href="#contact" class="btn btn-main">احجزي دلوقتي</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>تواصل معنا</h2>
+<p>للحجز والاستفسار</p>
+</div>
+
+<div class="contact-box">
+
+<h3>احجزي معانا الآن 💖</h3>
+
+<p>📞 01200327196</p>
+
+<p>☎ 035543437</p>
+
+<p>📍 Alexandria - Egypt</p>
+
+<div class="socials">
+
+<a href="https://www.facebook.com/share/1E1kgD8nrB/" target="_blank">
+Facebook
+</a>
+
+<a href="https://www.instagram.com/beauty_center_t.n.k?igsh=MXE0b3p4ZGFrZHAzcg==" target="_blank">
+Instagram
+</a>
+
+<!-- إضافة واتساب فقط -->
+<a href="https://wa.me/201200327196" target="_blank">
+WhatsApp
+</a>
+
+<a href="tel:01200327196">
+اتصال الآن
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 T. N. K Beauty Center - All Rights Reserved
+</p>
+
+</footer>
+
+<!-- FLOATING CALL BUTTON -->
+
+<a href="tel:01200327196" class="call-btn">
+☎
+</a>
+
+</body>
+</html>
